@@ -1,7 +1,8 @@
 import React from 'react'
+import H1 from './ui/heading/h1'
 
 const App = () => (
-  <h1>Tervetuloa kaveri!</h1>
+  <H1>Tervetuloa kaveri!</H1>
 )
 
 export default App
