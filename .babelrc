@@ -1,8 +1,11 @@
 {
   "plugins": [
-    "react-hot-loader/babel"
+    "react-hot-loader/babel",
+    "transform-react-jsx-source"
   ],
   "presets": [
+    "es2015",
+    "stage-0",
     "react"
   ]
 }

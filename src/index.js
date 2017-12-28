@@ -1,13 +1,16 @@
 import React from 'react'
 import {render} from 'react-dom'
 import {AppContainer} from 'react-hot-loader'
+import {BrowserRouter} from 'react-router-dom'
 import App from './app'
 
 const wrapper = document.querySelector('#untitled')
 
 render(
   <AppContainer>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </AppContainer>,
   wrapper
 )
@@ -17,7 +20,9 @@ if (module.hot) {
     const HotAppLoader = require('./app').default
     render(
       <AppContainer>
-        <HotAppLoader />
+        <BrowserRouter>
+          <HotAppLoader />
+        </BrowserRouter>
       </AppContainer>,
       wrapper
     )
