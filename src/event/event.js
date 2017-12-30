@@ -16,10 +16,12 @@ export default class Event extends React.Component {
   }
 
   componentWillMount() {
-    // TODO configure json-server and webpack
-    // TODO save to state
     // TODO If not found, redirect to NotFound
-    eventApi.getEvent(this.props.match.params.eventId)
+    // TODO Way to handle Not Found
+    eventApi
+      .getEvent(this.props.match.params.eventId)
+      .then(event => this.setState({...event}))
+
   }
 
   render() {
@@ -38,12 +40,9 @@ export default class Event extends React.Component {
     return (
       <Loader isLoading={isLoading}>
         <H1>{name}</H1>
-        <p>Howdy</p>
-        <p>
-          {description}
-          {location}
-          {start} - {end}
-        </p>
+        <div>{description}</div>
+        <div>{start} - {end}</div>
+        <div>{location}</div>
         {participants.map((participant, i) => (<div key={i}>{participant}</div>))}
         <Button>Participate</Button>
       </Loader>

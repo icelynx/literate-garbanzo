@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --port 8080",
-    "api": "json-server --watch db.json"
+    "api": "json-server --watch db.json --port 3000 "
   },
   "repository": {
     "type": "git",
